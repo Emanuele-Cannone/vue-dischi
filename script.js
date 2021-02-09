@@ -9,3 +9,4 @@
 // Layout base:
 // https://bitbucket.org/booleancareers/ex-dischi-musicali-layout
 // Togliete $(document).ready(...) dal js
+
