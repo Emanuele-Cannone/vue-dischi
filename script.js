@@ -58,15 +58,13 @@ var app = new Vue({
 
 
         altro(){
-            console.log('arrayAppoggio',this.arrayAppoggio);
-            console.log('array generi',this.tuttiGeneri);
+            // console.log('arrayAppoggio',this.arrayAppoggio);
+            // console.log('array generi',this.tuttiGeneri);
             console.log(this.selezione);
         },
-
         ciao(){
-            value = this.selezione
+            generi = this.selezione
         }
-        
     }
 
 });
