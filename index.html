@@ -32,9 +32,9 @@
             </div>
             
             <div>
-                <select name="generi">
+                <select @click="ciao()" name="generi">
                     <option value="All">All</option>
-                    <option v-for="generi in tuttiGeneri" >{{generi}}</option>
+                    <option v-for="generi in tuttiGeneri" :value="generi">{{generi}}</option>
                 </select>
             </div>
 
@@ -43,11 +43,11 @@
         <div class="cds-container container">
             
             <!-- Disco ad esempio -->
-            <div class="cd">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                <h3>Ten's Summoners Tales</h3>
-                <span class="author">Sting</span>
-                <span class="year">1993</span>
+            <div v-for="cd in arrayAppoggio" class="cd">
+                <img :src="cd.poster" alt="">
+                <h3>{{cd.title}}</h3>
+                <span class="author">{{cd.author}}</span>
+                <span class="year">{{cd.year}}</span>
             </div>
 
 
