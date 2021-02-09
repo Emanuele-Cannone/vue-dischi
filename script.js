@@ -6,7 +6,45 @@
 // In base a cosa scegliamo nella select vedremo i corrispondenti cd.
 //     Chiamata: https://flynn.boolean.careers/exercises/api/array/music
 
-// Layout base:
-// https://bitbucket.org/booleancareers/ex-dischi-musicali-layout
-// Togliete $(document).ready(...) dal js
 
+// MODELLO DI RISULTATO
+
+// "success": true,
+//     "response": [
+//         {
+//             "poster": "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
+//             "title": "New Jersey",
+//             "author": "Bon Jovi",
+//             "genre": "Rock",
+//             "year": "1988"
+//         },
+
+
+var app = new Vue({
+    
+    el: '#esercizio',
+    data:{
+        arrayAppoggio: [],// uso un arrray di appoggio per inserire i dati della chiamata 
+        // CHIEDI SE E' GIUSTO FARE COSI PER LAVORARE PIU VEOCEMENTE ED EVITARE MOLTEPLICI CHIAMATE
+    },
+
+    mounted(){// al caricamento della pagina
+
+        for (let i = 0; i < 10; i++) {// ciclo per 10 volte
+            
+            axios // la chiamata per prendermi i dati 
+                .get('https://flynn.boolean.careers/exercises/api/array/music')
+                .then(
+                    ((response) => {
+    
+                        this.arrayAppoggio.map(...element,
+                            {
+                                poster: response.data.poster
+                            }
+                        )
+                    })
+                )
+        }
+        console.log(this.arrayAppoggio);
+    }
+});
