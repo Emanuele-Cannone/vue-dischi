@@ -30,21 +30,17 @@ var app = new Vue({
 
     mounted(){// al caricamento della pagina
 
-        for (let i = 0; i < 10; i++) {// ciclo per 10 volte
+        
             
-            axios // la chiamata per prendermi i dati 
+            axios // uso la chiamata per prendermi l'array
                 .get('https://flynn.boolean.careers/exercises/api/array/music')
                 .then(
-                    ((response) => {
+                    ((result) => {
     
-                        this.arrayAppoggio.map(...element,
-                            {
-                                poster: response.data.poster
-                            }
-                        )
+                        this.arrayAppoggio = result.data.response
                     })
                 )
-        }
+     
         console.log(this.arrayAppoggio);
     }
 });
