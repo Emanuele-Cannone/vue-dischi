@@ -28,13 +28,13 @@
 
             <div class="container">
                 <img src="logo.png" alt="logo" />
-                <button @click="altro()">CLICCA</button>
+                <button @click="altro()">CLICCA PER FARE I LOG</button>
             </div>
             
             <div>
                 <select name="generi">
                     <option value="All">All</option>
-                    <option v-for="tuttiGeneri in generi" value="">{{tuttiGeneri}}</option>
+                    <option v-for="generi in tuttiGeneri" >{{generi}}</option>
                 </select>
             </div>
 

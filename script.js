@@ -24,7 +24,7 @@ var app = new Vue({
     
     el: '#esercizio',
     data:{
-        generi: [],// mi serve per definire tutti i generi una sola volta in modo da avere una lista
+        tuttiGeneri: [],// mi serve per definire tutti i generi una sola volta in modo da avere una lista
         arrayAppoggio: [],// uso un arrray di appoggio per inserire i dati della chiamata 
         // CHIEDI SE E' GIUSTO FARE COSI PER LAVORARE PIU VEOCEMENTE ED EVITARE MOLTEPLICI CHIAMATE
     },
@@ -39,23 +39,25 @@ var app = new Vue({
                         this.arrayAppoggio = result.data.response
                         //console.log(this.arrayAppoggio);// lo uso per vedere cosa effettivamente ho preso
 
-                        }),    
+                        for (let i = 0; i < this.arrayAppoggio.length; i++) {
+                            
+                            if (!this.tuttiGeneri.includes(this.arrayAppoggio[i].genre)) {
+                                
+                                this.tuttiGeneri.push(this.arrayAppoggio[i].genre)
+                            }
+                            
+                        }       
+                        })    
                     )
-                for (let i = 0; i < this.arrayAppoggio.length; i++) {
+
                     
-                    if (!this.generi.includes(this.arrayAppoggio[i].genre)) {
-                        
-                        this.generi.push(this.arrayAppoggio[i].genre)
-                    }
-                    
-                }       
     },
     methods:{
 
 
         altro(){
-            console.log(this.arrayAppoggio);
-            console.log(this.generi);
+            console.log('arrayAppoggio',this.arrayAppoggio);
+            console.log('array generi',this.tuttiGeneri);
 
         }
         
