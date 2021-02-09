@@ -28,11 +28,11 @@
 
             <div class="container">
                 <img src="logo.png" alt="logo" />
-                <button @click="altro()">CLICCA PER FARE I LOG</button>
+                <button @click="altro">CLICCA PER FARE I LOG</button>
             </div>
             
             <div>
-                <select name="generi">
+                <select v-model="selezione" name="generi">
                     <option value="All">All</option>
                     <option v-for="generi in tuttiGeneri" :value="generi">{{generi}}</option>
                 </select>
@@ -43,7 +43,7 @@
         <div class="cds-container container">
             
             <!-- Disco ad esempio -->
-            <div v-for="cd in arrayAppoggio"  class="cd">
+            <div v-for="cd in arrayAppoggio" v-if="selezione == 'All' || selezione == cd.genre" class="cd">
                 <img :src="cd.poster" alt="">
                 <h3>{{cd.title}}</h3>
                 <span class="author">{{cd.author}}</span>

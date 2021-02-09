@@ -24,7 +24,7 @@ var app = new Vue({
     
     el: '#esercizio',
     data:{
-        selezione: '',
+        selezione: 'All',// mi serve per prendere il valore della selezione
         tuttiGeneri: [],// mi serve per definire tutti i generi una sola volta in modo da avere una lista
         arrayAppoggio: [],// uso un arrray di appoggio per inserire i dati della chiamata 
         // CHIEDI SE E' GIUSTO FARE COSI PER LAVORARE PIU VEOCEMENTE ED EVITARE MOLTEPLICI CHIAMATE
@@ -61,9 +61,7 @@ var app = new Vue({
             // console.log('arrayAppoggio',this.arrayAppoggio);
             // console.log('array generi',this.tuttiGeneri);
             console.log(this.selezione);
-        },
-        ciao(){
-            generi = this.selezione
+            
         }
     }
 
